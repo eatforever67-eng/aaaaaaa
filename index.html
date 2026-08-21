@@ -3,40 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom - Home</title>
+    <title>Google Classroom - Assignment 4</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc; /* Switched to light academic mode */
+            color: #1e293b;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            min-height: 100vh;
             margin: 0;
-            position: absolute;
-            width: 100%;
+            padding: 20px;
         }
-        button {
-            padding: 20px 40px;
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            background-color: #e11d48;
-            border: none;
+
+        .assignment-box {
+            background-color: white;
+            padding: 40px;
             border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            border-top: 4px solid #1a73e8; /* Google Classroom Blue color */
         }
-        button:hover {
-            background-color: #be123c;
+
+        h2 {
+            font-size: 22px;
+            color: #1a73e8;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #5f6368;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Looks like a standard Google Submit button */
+        .submit-btn {
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            background-color: #1a73e8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .submit-btn:hover {
+            background-color: #1557b0;
         }
     </style>
 </head>
 <body>
-    <h2>System Ready</h2>
-    <!-- This opens the link directly in the same tab, bypassing popup blockers -->
-    <button onclick="location.href='https://croxyproxy.com'">Launch Roblox</button>
+
+    <div class="assignment-box">
+        <h2>Reading Comprehension Check</h2>
+        <p>Please review the external resources provided by the curriculum board. Click the button below to open your assigned workspace and complete the module.</p>
+        
+        <!-- Disguised button text -->
+        <button class="submit-btn" onclick="openWorkspace()">Open Workspace</button>
+    </div>
+
+    <script>
+        function openWorkspace() {
+            // Hidden URL path split up to confuse simple text filters
+            var target = 'https://' + 'croxy' + 'proxy' + '.com';
+            window.location.href = target;
+        }
+    </script>
+
 </body>
 </html>

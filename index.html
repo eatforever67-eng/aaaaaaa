@@ -23,47 +23,30 @@
             font-size: 18px;
             font-weight: bold;
             color: white;
-            background-color: #007bff;
+            background-color: #28a745;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <h2>Click below to launch workspace session</h2>
-    <button onclick="launchGame()">Launch Session</button>
+    <h2>Launch Unblocked Session</h2>
+    <button onclick="launchProxy()">Launch Roblox</button>
 
     <script>
-        function launchGame() {
-            // Target url
-            const targetUrl = "https://now.gg";
+        function launchProxy() {
+            // This encodes the now.gg link to hide it from your school's automated filter
+            var gameUrl = "https://now.gg";
             
-            // HTML content for the secret window
-            const htmlContent = `
-                <html>
-                <head>
-                    <title>Roblox Platform</title>
-                    <style>
-                        body, iframe { margin: 0; padding: 0; width: 100%; height: 100%; border: none; overflow: hidden; background: #000; }
-                    </style>
-                </head>
-                <body>
-                    <iframe src="${targetUrl}" allow="autoplay; gamepad; fullscreen"></iframe>
-                </body>
-                </html>
-            `;
-
-            // Convert code into a secret binary blob URL
-            const blob = new Blob([htmlContent], { type: "text/html" });
-            const blobUrl = URL.createObjectURL(blob);
-
-            // Open the game in a clean window that bypasses the frame error
-            window.open(blobUrl, "_blank");
+            // Routes the request through a public web proxy server
+            var proxyUrl = "https://croxyproxy.com" + encodeURIComponent(gameUrl);
+            
+            window.open(proxyUrl, "_blank");
         }
     </script>
 </body>

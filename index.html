@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Workspace</title>
+    <title>Google Classroom - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,35 +19,24 @@
             width: 100%;
         }
         button {
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 20px 40px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
-            background-color: #28a745;
+            background-color: #e11d48;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         button:hover {
-            background-color: #218838;
+            background-color: #be123c;
         }
     </style>
 </head>
 <body>
-    <h2>Launch Unblocked Session</h2>
-    <button onclick="launchProxy()">Launch Roblox</button>
-
-    <script>
-        function launchProxy() {
-            // This encodes the now.gg link to hide it from your school's automated filter
-            var gameUrl = "https://now.gg";
-            
-            // Routes the request through a public web proxy server
-            var proxyUrl = "https://croxyproxy.com" + encodeURIComponent(gameUrl);
-            
-            window.open(proxyUrl, "_blank");
-        }
-    </script>
+    <h2>System Ready</h2>
+    <!-- This opens the link directly in the same tab, bypassing popup blockers -->
+    <button onclick="location.href='https://croxyproxy.com'">Launch Roblox</button>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Classroom - Assignment 4</title>
+    <title>Curriculum Workspace Portal</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,8 +13,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: #f1f5f9;
+            color: #0f172a;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,62 +22,111 @@
             padding: 20px;
         }
 
-        .assignment-box {
+        .portal-card {
             background-color: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            max-width: 550px;
             width: 100%;
-            border-top: 4px solid #1a73e8;
-            display: flex;
-            flex-direction: column;
+            border-top: 6px solid #1a73e8;
         }
 
-        h2 {
-            font-size: 22px;
+        .status-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            background-color: #e2e8f0;
+            color: #475569;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 24px;
             color: #1a73e8;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         p {
             font-size: 14px;
-            color: #5f6368;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
 
-        /* Styled as a button but acts as a reliable link */
-        .submit-btn {
-            display: inline-block;
-            padding: 10px 24px;
+        .resource-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .resource-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .resource-info h3 {
             font-size: 14px;
-            font-weight: 500;
-            color: #ffffff;
-            background-color: #1a73e8;
-            text-decoration: none;
-            border-radius: 4px;
-            align-self: flex-end;
-            transition: background-color 0.2s ease;
-            text-align: center;
+            color: #1e293b;
         }
 
-        .submit-btn:hover, 
-        .submit-btn:focus {
-            background-color: #1557b0;
-            outline: 2px solid #1a73e8;
-            outline-offset: 2px;
+        .resource-link {
+            font-size: 13px;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Standard Footer */
+        .footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 16px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #94a3b8;
+            text-align: right;
         }
     </style>
 </head>
 <body>
 
-    <main class="assignment-box">
-        <h2>Reading Comprehension Check</h2>
-        <p>Please review the external resources provided by the curriculum board. Click the button below to open your assigned workspace and complete the module.</p>
-        <!-- Converted to a native link for maximum compatibility -->
-        <a href="https://croxyproxy.com" class="submit-btn" target="_blank" rel="noopener noreferrer">Open Workspace</a>
+    <main class="portal-card">
+        <!-- Update version tag to see changes -->
+        <span class="status-badge" id="version-tag">Build: 1.0.3</span>
+        
+        <h1>Assignment Workspace</h1>
+        <p>Select your assigned curriculum tool below. Note that external links may open in a new window or tab depending on your local browser settings.</p>
+        
+        <ul class="resource-list">
+            <li class="resource-item">
+                <div class="resource-info">
+                    <h3>Primary Proxy Utility</h3>
+                </div>
+                <!-- Clean, explicit standard hyperlink -->
+                <a href="https://croxyproxy.com" class="resource-link" target="_blank" rel="noopener noreferrer">Launch Tool &rarr;</a>
+            </li>
+        </ul>
+
+        <footer class="footer">
+            <span id="timestamp">Last Updated: Just Now</span>
+        </footer>
     </main>
 
+    <script>
+        // Dynamically updates the timestamp every time the page loads
+        document.getElementById('timestamp').innerText = 'Last Updated: ' + new Date().toLocaleTimeString();
+    </script>
 </body>
 </html>
